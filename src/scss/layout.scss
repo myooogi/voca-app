@@ -117,18 +117,15 @@ a {
   justify-content: flex-start;
   flex-wrap: wrap;
   li {
-    margin: 5px;
     a {
       display: flex;
       width: 120px;
       height: 50px;
-      background-color: $blue;
-      color: #fff;
+      color: $main-color;
       justify-content: center;
       align-items: center;
       text-transform: uppercase;
       font-weight: 700;
-      border-radius: 100px;
     }
   }
 }
