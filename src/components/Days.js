@@ -14,7 +14,7 @@ export default function Days() {
   //상태변수를 넣어주면 그게 바뀔때마다 useEffect를 실행한다.
   return (
     <>
-      <div className="container">
+      <div className="container dayBox">
         <ul className="days">
           {days.map((item, idx) => {
             return (

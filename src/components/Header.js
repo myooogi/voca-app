@@ -4,7 +4,9 @@ export default function Header() {
     <>
       <header id="header" className="header">
         <h1>
-          <Link to="/">TODAY-VOCA</Link>
+          <Link to="/">
+            TODAY <span>VOCA</span>
+          </Link>
         </h1>
         <nav id="menu">
           <ul>

@@ -11,50 +11,101 @@
     {
       "id": 3,
       "day": 3
+    },
+    {
+      "day": 4,
+      "id": 4
+    },
+    {
+      "day": 5,
+      "id": 5
+    },
+    {
+      "day": 6,
+      "id": 6
+    },
+    {
+      "day": 7,
+      "id": 7
     }
   ],
   "voca": [
     {
-      "day": 2,
-      "eng": "lion",
       "kor": "사자",
-      "isDone": true,
-      "id": 1
+      "eng": "lion",
+      "isDone": false,
+      "id": 1,
+      "day": 1
+    },
+    {
+      "kor": "호랑이",
+      "eng": "tiger",
+      "isDone": false,
+      "id": 2,
+      "day": 1
+    },
+    {
+      "kor": "토끼",
+      "eng": "rabbit",
+      "isDone": false,
+      "id": 3,
+      "day": 2
     },
     {
       "day": 2,
-      "eng": "tiger",
-      "kor": "호랑이",
-      "isDone": true,
-      "id": 2
-    },
-    {
-      "day": 1,
-      "eng": "rabbit",
-      "kor": "토끼",
-      "isDone": true,
-      "id": 3
-    },
-    {
-      "day": 1,
       "eng": "fox",
       "kor": "여우",
       "isDone": false,
       "id": 4
     },
     {
-      "day": 2,
+      "day": 3,
       "eng": "dog",
       "kor": "개",
-      "isDone": true,
+      "isDone": false,
       "id": 5
     },
     {
-      "day": 2,
+      "day": 3,
       "eng": "horse",
       "kor": "말",
-      "isDone": true,
+      "isDone": false,
       "id": 6
+    },
+    {
+      "day": 4,
+      "eng": "bird",
+      "kor": "새",
+      "isDone": false,
+      "id": 7
+    },
+    {
+      "day": 5,
+      "eng": "bear",
+      "kor": "곰",
+      "isDone": false,
+      "id": 8
+    },
+    {
+      "day": 6,
+      "eng": "snake",
+      "kor": "뱀",
+      "isDone": false,
+      "id": 9
+    },
+    {
+      "kor": "늑대",
+      "eng": "wolf",
+      "isDone": false,
+      "id": 10,
+      "day": 7
+    },
+    {
+      "day": 7,
+      "eng": "shark",
+      "kor": "상어",
+      "isDone": false,
+      "id": 11
     }
   ]
 }
