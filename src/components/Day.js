@@ -9,7 +9,7 @@ export default function Day() {
   const [voca, setVoca] = useState([]);
   //queryString
   useEffect(() => {
-    axios.get(`http://127.0.0.1:5000/voca?day=${day}`).then((res) => {
+    axios.get(`http://127.0.0.1:8099/voca/${day}`).then((res) => {
       setVoca(res.data);
       //console.log(res.data);
     });
@@ -17,7 +17,7 @@ export default function Day() {
   return (
     <>
       <div className="container dayBox">
-        <h2 className="title">Day-{day}</h2>
+        <h2 className="title">Day - {day}</h2>
         {/* 여기에 day/1에 해당하는 값을 뿌려주면 된다. */}
         <ul className="vocas">
           {voca.map((item, idx) => {

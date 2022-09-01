@@ -19,17 +19,12 @@ export default function Voca(props) {
 
     //console.log(...props);
     axios
-      .put(`http://127.0.0.1:5000/voca/${props.id}`, {
-        // eng: props.eng,
-        // kor: props.kor,
-        // id: props.id,
-        // day: props.day,
-        ...props,
+      .put(`http://127.0.0.1:8099/voca/${props.id}`, {
         isDone: !isDone, //!부정
       })
       .then((res) => {
-        console.log(res);
-        if (res.statusText === "OK") {
+        if (res.data.update === "ok") {
+          console.log("바꼈다");
           setIsDone(!isDone);
         }
       });
@@ -38,8 +33,9 @@ export default function Voca(props) {
     console.log("delete");
     if (window.confirm("다외웠나요?")) {
       console.log("delete");
-      axios.delete(`http://127.0.0.1:5000/voca/${props.id}`).then((res) => {
-        if (res.statusText === "OK") {
+      axios.delete(`http://127.0.0.1:8099/voca/${props.id}`).then((res) => {
+        console.log(res.data);
+        if (res.data.delete === "ok") {
           setInfo({ id: -1 });
           //db에서 값을 지웠다는 결과를 받았기 때문에
           //-1을 세팅하고 아래쪽에서 return false를 통해 화면에서 렌더링 안되게 만듦

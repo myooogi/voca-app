@@ -6,7 +6,7 @@ export default function Days() {
   const [days, setDays] = useState([]);
   //state가 변경될때마다 감지를 해서 실행을 한다.
   useEffect(() => {
-    axios.get("http://127.0.0.1:5000/days").then((res) => {
+    axios.get("http://127.0.0.1:8099/days").then((res) => {
       setDays(res.data);
       //console.log(days);
     });
@@ -19,7 +19,7 @@ export default function Days() {
           {days.map((item, idx) => {
             return (
               <li>
-                <Link to={`/day/${item.day}`}>day{item.day}</Link>
+                <Link to={`/day/${item.day}`}>day {item.day}</Link>
               </li>
             );
           })}

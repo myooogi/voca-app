@@ -2,4 +2,6 @@
 
 .App {
   font-family: "Roboto", "Noto Sans KR", sans-serif;
+  padding: 100px 80px;
+  box-sizing: border-box;
 }

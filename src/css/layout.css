@@ -1,7 +1,6 @@
 body {
   font-size: 16px;
-  color: #111;
-  background-color: #333;
+  color: #000;
 }
 
 a {
@@ -14,61 +13,69 @@ a {
 }
 
 #header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  position: relative;
   z-index: 99;
-  overflow: hidden;
-  background-color: #fff;
 }
 #header h1 {
-  font-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
+  display: flex;
+  font-size: 60px;
+  font-weight: 300;
 }
-#header h1 strong {
-  font-weight: 700;
+#header h1 a {
+  display: flex;
+  align-items: center;
+  letter-spacing: -3px;
+}
+#header h1 a strong {
+  margin-left: 20px;
+  font-size: 80px;
+  font-weight: 800;
+  letter-spacing: 5px;
 }
 #header #menu {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-top: 60px;
 }
 #header #menu ul {
   display: flex;
 }
-#header #menu ul li {
-  margin-left: 10px;
+#header #menu ul li:first-child {
+  border-right: 3px solid #000;
 }
 #header #menu ul li a {
   display: flex;
   padding: 15px 30px;
   justify-content: center;
   align-items: center;
-  color: #fff;
   font-weight: 700;
+  border: 3px solid #000;
+  transition: all 0.1s;
 }
 #header #menu ul li a.day {
+  border-right: 0;
+}
+#header #menu ul li a.day:hover {
   background-color: rgb(226, 38, 38);
+  border-color: rgb(226, 38, 38);
+  color: #fff;
 }
 #header #menu ul li a.voca {
+  border-left: 0;
+}
+#header #menu ul li a.voca:hover {
   background-color: rgb(38, 74, 231);
+  border-color: rgb(38, 74, 231);
+  color: #fff;
 }
 
 .container {
-  width: 1200px;
   margin: 100px auto;
-  color: #fff;
 }
 .container .title {
   font-size: 48px;
-  font-weight: 500;
+  font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 50px;
+  padding: 20px 0;
+  border-bottom: 5px solid #000;
 }
 
 .dayBox .current {
@@ -98,13 +105,12 @@ a {
 .btns {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin: 50px 0;
 }
 .btns .btn {
   border: none;
   outline: none;
-  padding: 20px 40px;
-  border-radius: 5px;
+  padding: 15px 30px;
   background-color: rgb(38, 74, 231);
   color: #fff;
   font-size: 18px;
@@ -113,8 +119,11 @@ a {
 
 .days {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
+}
+.days li {
+  margin: 0 10px;
 }
 .days li a {
   display: flex;
@@ -125,27 +134,60 @@ a {
   align-items: center;
   text-transform: uppercase;
   font-weight: 700;
+  background-color: #000;
+  color: #fff;
 }
 
 .vocas {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
 }
 .vocas li {
-  background-color: #fff;
-  margin: 10px 0;
-  height: 50px;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
   display: flex;
-  align-items: center;
-  color: #111;
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
+  background-color: #fff;
+  margin: 0 10px;
+  padding: 50px 50px 30px;
+  border: 5px solid #000;
   transition: background 0.25s ease;
 }
+.vocas li .word {
+  transition: all 0.25s ease;
+}
+.vocas li .eng {
+  font-size: 45px;
+  font-weight: 700;
+}
+.vocas li .kor {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 30px 0 50px;
+}
+.vocas li .btns {
+  transition: all 0.25s ease;
+  margin: 0;
+}
+.vocas li .btns .btn {
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.vocas li .btns .del {
+  margin-left: 10px;
+  background-color: rgb(226, 38, 38);
+}
+.vocas li .check {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.vocas li .check label input {
+  margin: 0;
+}
 .vocas li.done {
-  background-color: #666;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .vocas li.done .word {
   opacity: 0.5;
@@ -153,31 +195,6 @@ a {
 .vocas li.done .btns {
   opacity: 0.5;
   pointer-events: none;
-}
-.vocas li .eng {
-  margin-left: 20px;
-}
-.vocas li .kor {
-  margin-left: 20px;
-}
-.vocas li .word {
-  transition: all 0.25s ease;
-}
-.vocas li .btns {
-  transition: all 0.25s ease;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-top: 0;
-}
-.vocas li .btns .btn {
-  padding: 10px 20px;
-  font-size: 14px;
-}
-.vocas li .btns .del {
-  margin-left: 10px;
-  background-color: rgb(226, 38, 38);
 }
 
 .vocaBox .inputBox {
@@ -209,13 +226,22 @@ a {
 }
 
 #footer {
+  position: relative;
+}
+#footer .copyright {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 10px;
-}
-#footer .copyright {
-  font-weight: 500;
-  border-radius: 100px;
+  bottom: -80px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #777;
   text-transform: uppercase;
+}
+
+@media all and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
 }
