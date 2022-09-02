@@ -108,7 +108,7 @@ a {
 .btns {
   display: flex;
   justify-content: center;
-  margin: 50px 0;
+  margin: 100px 0 50px;
   .btn {
     border: none;
     outline: none;
@@ -184,7 +184,35 @@ a {
       left: 10px;
       label {
         input {
+          position: absolute;
           margin: 0;
+          padding: 0;
+          border: 0;
+          width: 0;
+          height: 0;
+          overflow: hidden;
+        }
+      }
+      .checkBox {
+        span:before {
+          @include icon("done", 0);
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-size: 24px;
+          width: 25px;
+          height: 25px;
+          overflow: hidden;
+          background-color: #fff;
+          box-sizing: border-box;
+          margin-right: 10px;
+          border: 5px solid $main-color;
+        }
+        input:checked ~ span:before {
+          color: #fff;
+          background-color: $main-color;
         }
       }
     }
@@ -215,6 +243,7 @@ a {
       font-weight: 700;
       align-items: center;
       margin-right: 10px;
+
       justify-content: center;
       width: 150px;
     }
@@ -222,7 +251,7 @@ a {
     select {
       display: flex;
       flex-grow: 1;
-      border: none;
+      border: 3px solid $main-color;
       outline: none;
       border-radius: 5px;
       padding: 0 20px;
@@ -235,7 +264,7 @@ a {
   position: relative;
   .copyright {
     @include absCenter(true, false);
-    bottom: -80px;
+    bottom: 10px;
     font-size: 12px;
     font-weight: 700;
     color: #777;
