@@ -4,7 +4,12 @@
 .App {
   font-family: "Roboto Condensed", "Noto Sans KR", sans-serif;
   position: relative;
-  height: 100vh;
   padding: 100px 80px;
   box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 50px 30px;
+  }
 }

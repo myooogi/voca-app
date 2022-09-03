@@ -24,14 +24,14 @@ export default function Voca(props) {
       })
       .then((res) => {
         if (res.data.update === "ok") {
-          console.log("바꼈다");
+          console.log("변경되었습니다");
           setIsDone(!isDone);
         }
       });
   };
   const deleteVoca = () => {
     console.log("delete");
-    if (window.confirm("다외웠나요?")) {
+    if (window.confirm("삭제하시겠습니까?")) {
       console.log("delete");
       axios.delete(`http://127.0.0.1:8099/voca/${props.id}`).then((res) => {
         console.log(res.data);

@@ -25,7 +25,7 @@ export default function Day() {
           })}
         </ul>
         <div className="btns">
-          <Link to="/" className="btn">
+          <Link to="/" className="btn backBtn">
             BACK
           </Link>
         </div>

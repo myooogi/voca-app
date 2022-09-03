@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function InsertDay() {
   const navigate = useNavigate();
@@ -34,6 +34,9 @@ export default function InsertDay() {
           </strong>
         </p>
         <div className="btns">
+          <Link to="/" className="btn backBtn">
+            BACK
+          </Link>
           <button className="btn" onClick={insertDay}>
             add day
           </button>

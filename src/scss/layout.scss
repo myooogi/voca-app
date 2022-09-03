@@ -9,6 +9,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
+button {
+  font-family: "Roboto Condensed";
+}
 * {
   box-sizing: border-box;
 }
@@ -22,7 +25,7 @@ a {
     a {
       display: flex;
       align-items: center;
-      letter-spacing: -3px;
+      letter-spacing: 0.5px;
       strong {
         margin-left: 13px;
         font-size: 80px;
@@ -47,6 +50,7 @@ a {
           font-weight: 700;
           border: 3px solid $main-color;
           transition: all 0.1s;
+          letter-spacing: 1px;
           &.day {
             border-right: 0;
             &:hover {
@@ -82,24 +86,29 @@ a {
 }
 .dayBox {
   .current {
-    font-size: 24px;
-    margin-top: 50px;
+    font-size: 35px;
+    margin-top: 100px;
     text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+    .day {
+      font-size: 50px;
+      margin-right: 5px;
+    }
     strong {
-      font-weight: 800;
       position: relative;
       display: inline-block;
-      padding-bottom: 10px;
       margin-left: 10px;
+      font-size: 30px;
       &:before {
         content: "";
         position: absolute;
-        left: -10px;
-        right: -10px;
-        bottom: 15px;
-        height: 10px;
-        background-color: $blue;
-        border-radius: 100px;
+        width: 117%;
+        height: 100%;
+        left: -2px;
+        bottom: 2px;
+        transform: rotate(-3deg);
+        background-color: rgba(123, 255, 0, 0.5);
         z-index: -1;
       }
     }
@@ -117,6 +126,14 @@ a {
     color: #fff;
     font-size: 18px;
     text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+  .backBtn {
+    background-color: $main-color;
   }
 }
 
@@ -125,7 +142,7 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   li {
-    margin: 0 10px;
+    margin: 10px;
     a {
       display: flex;
       width: 120px;
@@ -143,14 +160,14 @@ a {
 .vocas {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   li {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     position: relative;
     background-color: #fff;
-    margin: 0 10px;
-    padding: 50px 50px 30px;
+    margin: 20px;
+    padding: 70px 70px 30px;
     border: 5px solid $main-color;
     transition: background 0.25s ease;
     .word {
@@ -172,7 +189,8 @@ a {
       .btn {
         padding: 10px 20px;
         font-size: 12px;
-        font-weight: 500;
+        font-weight: 700;
+        letter-spacing: 1px;
       }
       .del {
         margin-left: 10px;
@@ -202,14 +220,13 @@ a {
           justify-content: center;
           align-items: center;
           color: #fff;
-          width: 25px;
-          height: 25px;
+          width: 30px;
+          height: 30px;
           font-size: 24px;
           font-weight: 900;
           overflow: hidden;
           background-color: #fff;
           box-sizing: border-box;
-          margin-right: 10px;
           border: 5px solid $main-color;
         }
         input:checked ~ span:before {
@@ -232,22 +249,20 @@ a {
 }
 
 .vocaBox {
+  padding: 0 300px;
   .inputBox {
     display: flex;
     margin-bottom: 20px;
     label {
       display: flex;
       color: #fff;
-      background-color: $blue;
       height: 50px;
-      border-radius: 100px;
       font-size: 18px;
       font-weight: 700;
       align-items: center;
-      margin-right: 10px;
-
       justify-content: center;
-      width: 150px;
+      width: 100px;
+      letter-spacing: 2px;
     }
     input,
     select {
@@ -255,28 +270,172 @@ a {
       flex-grow: 1;
       border: 3px solid $main-color;
       outline: none;
-      border-radius: 5px;
       padding: 0 20px;
       box-sizing: border-box;
+    }
+    select {
+      padding: 10px 20px;
+    }
+    .eng {
+      background-color: $blue;
+    }
+    .kor {
+      background-color: $red;
     }
   }
 }
 
 #footer {
-  position: relative;
-  .copyright {
-    @include absCenter(true, false);
-    bottom: 10px;
-    font-size: 12px;
-    font-weight: 700;
-    color: #777;
-    text-transform: uppercase;
-  }
+  @include absCenter(true, false);
+  bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 @media all and(max-width:1200px) {
+  .vocaBox {
+    padding: 0 150px;
+  }
+}
+
+@media all and(max-width:980px) {
+  #header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .vocaBox {
+    padding: 0;
+  }
+}
+
+@media all and(max-width:600px) {
+  #header {
+    h1 {
+      font-size: 30px;
+      a {
+        flex-direction: column;
+        align-items: flex-start;
+        strong {
+          font-size: 50px;
+          margin: 0;
+        }
+      }
+    }
+    #menu {
+      margin-top: 30px;
+      ul {
+        li {
+          a {
+            padding: 10px 20px;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
   .container {
+    margin: 50px auto;
+    .title {
+      font-size: 30px;
+      padding: 10px 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .days {
+      li {
+        a {
+          width: 100px;
+          height: 40px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .dayBox {
+    .current {
+      margin-top: 50px;
+      font-size: 22px;
+      strong {
+        font-size: 25px;
+        .day {
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .vocaBox {
+    margin-top: 50px;
     width: 100%;
-    padding: 0 20px;
+    .inputBox {
+      label {
+        width: 70px;
+        height: 40px;
+        font-size: 14px;
+      }
+      input,
+      select {
+        width: 100%;
+      }
+    }
+  }
+
+  .vocas {
+    flex-direction: column;
+    li {
+      width: 100%;
+      margin: 0 0 20px;
+      padding: 40px 20px 20px 50px;
+      .check {
+        .checkBox {
+          span {
+            &:before {
+              width: 20px;
+              height: 20px;
+              border: 4px solid $main-color;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      .word {
+        word-break: break-word;
+      }
+      .eng {
+        font-size: 30px;
+      }
+      .kor {
+        font-size: 16px;
+        margin: 20px 0 50px;
+        line-height: 1.2;
+      }
+      .btns {
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .btns {
+    margin: 80px 0 0;
+    .btn {
+      padding: 10px 25px;
+      font-size: 16px;
+    }
+    .pageBtn {
+      padding: 10px 25px;
+      font-size: 15px;
+    }
+  }
+
+  #footer {
+    word-break: break-word;
+    text-align: center;
+    font-weight: 500;
+    line-height: 1.2;
   }
 }
