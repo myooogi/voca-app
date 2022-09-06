@@ -7,7 +7,7 @@ export default function InsertDay() {
   const [days, setDays] = useState([]); //화면 렌더링할때는 useState를 사용해야한다 (기본값)
   useEffect(() => {
     //받는곳
-    axios.get("http://127.0.0.1:8099/days").then((res) => {
+    axios.get("https://today-voca.netlify.app/days").then((res) => {
       setDays(res.data);
     });
   }, []);

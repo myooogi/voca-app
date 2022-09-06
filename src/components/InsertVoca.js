@@ -19,7 +19,7 @@ export default function InsertVoca() {
     console.log(kor.current.value);
     console.log(day.current.value);
     axios
-      .post(`http://127.0.0.1:8099/voca/add`, {
+      .post(`https://today-voca.netlify.app/voca/add`, {
         day: parseInt(day.current.value),
         eng: eng.current.value,
         kor: kor.current.value,
