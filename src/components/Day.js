@@ -9,7 +9,7 @@ export default function Day() {
   const [voca, setVoca] = useState([]);
   //queryString
   useEffect(() => {
-    axios.get(`https://today-voca.netlify.app/voca/${day}`).then((res) => {
+    axios.get(`https://today-voca.herokuapp.com/voca/${day}`).then((res) => {
       setVoca(res.data);
       //console.log(res.data);
     });

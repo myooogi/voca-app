@@ -19,7 +19,7 @@ export default function InsertVoca() {
     console.log(kor.current.value);
     console.log(day.current.value);
     axios
-      .post(`https://today-voca.netlify.app/voca/add`, {
+      .post(`https://today-voca.herokuapp.com/voca/add`, {
         day: parseInt(day.current.value),
         eng: eng.current.value,
         kor: kor.current.value,
@@ -33,7 +33,7 @@ export default function InsertVoca() {
       });
   };
   useEffect(() => {
-    axios.get(`https://today-voca.netlify.app/days`).then((res) => {
+    axios.get(`https://today-voca.herokuapp.com/days`).then((res) => {
       console.log(res.data);
       setDays(res.data);
     });

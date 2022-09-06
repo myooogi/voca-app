@@ -19,7 +19,7 @@ export default function Voca(props) {
 
     //console.log(...props);
     axios
-      .put(`https://today-voca.netlify.app/voca/${props.id}`, {
+      .put(`https://today-voca.herokuapp.com/voca/${props.id}`, {
         isDone: !isDone, //!부정
       })
       .then((res) => {
@@ -33,7 +33,7 @@ export default function Voca(props) {
     console.log("delete");
     if (window.confirm("삭제하시겠습니까?")) {
       console.log("delete");
-      axios.delete(`https://today-voca.netlify.app/voca/${props.id}`).then((res) => {
+      axios.delete(`https://today-voca.herokuapp.com/voca/${props.id}`).then((res) => {
         console.log(res.data);
         if (res.data.delete === "ok") {
           setInfo({ id: -1 });

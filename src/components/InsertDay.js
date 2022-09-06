@@ -7,14 +7,14 @@ export default function InsertDay() {
   const [days, setDays] = useState([]); //화면 렌더링할때는 useState를 사용해야한다 (기본값)
   useEffect(() => {
     //받는곳
-    axios.get("https://today-voca.netlify.app/days").then((res) => {
+    axios.get("https://today-voca.herokuapp.com/days").then((res) => {
       setDays(res.data);
     });
   }, []);
   const insertDay = () => {
     //axios를 가지고 json-server에 데이터 밀어넣기
     //setDays(days + 1);
-    axios.post("https://today-voca.netlify.app/day/add", { day: days.length + 1 }).then((res) => {
+    axios.post("https://today-voca.herokuapp.com/day/add", { day: days.length + 1 }).then((res) => {
       console.log(res.data);
       if (res.data.insert === "ok") {
         alert("day가 추가되었습니다.");
