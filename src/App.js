@@ -7,6 +7,7 @@ import Days from "./components/Days";
 import Day from "./components/Day";
 import InsertDay from "./components/InsertDay";
 import InsertVoca from "./components/InsertVoca";
+import ScrollTopBtn from "./components/ScrollTopBtn";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 //import UseRefComponent from "./components/UseRefComponent";
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/day/:day" element={<Day />} />
           {/* insert에 voca라는 주소가 들어오면 InsertVoca를 렌더링 */}
         </Routes>
+        <ScrollTopBtn />
         <Footer />
       </div>
     </BrowserRouter>

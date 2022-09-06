@@ -14,7 +14,7 @@ export default function InsertDay() {
   const insertDay = () => {
     //axios를 가지고 json-server에 데이터 밀어넣기
     //setDays(days + 1);
-    axios.post("http://127.0.0.1:8099/day/add", { day: days.length + 1 }).then((res) => {
+    axios.post("https://today-voca.netlify.app/day/add", { day: days.length + 1 }).then((res) => {
       console.log(res.data);
       if (res.data.insert === "ok") {
         alert("day가 추가되었습니다.");

@@ -33,7 +33,7 @@ export default function InsertVoca() {
       });
   };
   useEffect(() => {
-    axios.get(`http://127.0.0.1:8099/days`).then((res) => {
+    axios.get(`https://today-voca.netlify.app/days`).then((res) => {
       console.log(res.data);
       setDays(res.data);
     });
